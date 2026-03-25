@@ -1,0 +1,751 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/marlene-petit-performance-sante-feminine.webp';
+---
+
+<Layout title="Accueil" description="Marlène Petit - Stratège de la performance et de la santé féminine. J'aide les femmes sportives d'endurance à performer avec leur corps, pas contre lui.">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-card">
+          <h1>Stratège de la performance et de la santé féminine</h1>
+          <h2>J'aide les femmes sportives d'endurance à performer avec leur corps, pas contre lui.</h2>
+          <div class="hero-btn-wrap">
+            <a href="/a-propos" class="btn">Qui je suis ?</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <Image
+          src={heroImage}
+          alt="Marlène Petit, stratège de la performance et de la santé féminine pour les sportives d'endurance"
+          width={934}
+          height={1293}
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Problème -->
+  <section class="section problem-section">
+    <div class="container">
+      <h2 class="section-title">Quand tout faire bien ne suffit plus</h2>
+      <div class="problem-grid">
+        <div class="problem-do">
+          <p class="problem-intro">Tu t'entraînes.</p>
+          <p class="problem-intro">Tu manges correctement.</p>
+          <p class="problem-intro">Tu fais attention à ton sommeil.</p>
+        </div>
+        <div class="problem-but">
+          <p class="problem-heading">Et pourtant&hellip;</p>
+          <ul class="problem-list">
+            <li>Ta fatigue s'installe</li>
+            <li>Ta récupération devient plus longue</li>
+            <li>Ta progression ralentit, parfois sans explication claire</li>
+          </ul>
+        </div>
+      </div>
+      <blockquote class="problem-conclusion">Le problème n'est généralement ni la motivation, ni la discipline, mais un déséquilibre physiologique sous-jacent que le corps compense en silence.</blockquote>
+    </div>
+  </section>
+
+  <!-- Approche stratégique -->
+  <section class="section approach-section">
+    <div class="container">
+      <h2 class="section-title">Une approche stratégique de la performance & de la santé féminine</h2>
+      <p class="approach-intro"><strong>Objectif</strong> : restaurer une récupération efficace et une adaptation durable.</p>
+      <div class="approach-grid">
+        <div class="approach-card">
+          <span class="approach-number">1</span>
+          <p class="approach-title"><strong>J'analyse le terrain physiologique</strong></p>
+          <p>Équilibre hormonal, système nerveux, digestion, etc.</p>
+        </div>
+        <div class="approach-card">
+          <span class="approach-number">2</span>
+          <p class="approach-title"><strong>J'identifie ce que le corps compense déjà</strong></p>
+          <p>Tension nerveuse permanente, cycles perturbés, baisse de motivation, etc.</p>
+        </div>
+        <div class="approach-card">
+          <span class="approach-number">3</span>
+          <p class="approach-title"><strong>Je hiérarchise les leviers réellement prioritaires</strong></p>
+          <p>Sommeil, gestion du stress, alimentation, micronutrition ciblée.</p>
+        </div>
+        <div class="approach-card">
+          <span class="approach-number">4</span>
+          <p class="approach-title"><strong>J'ajuste dans le temps</strong></p>
+          <p>En fonction des réponses concrètes de ton corps.</p>
+        </div>
+      </div>
+      <div class="text-center" style="margin-top: 2.5rem;">
+        <a href="/approche" class="btn btn-on-sage">Explorer l'approche</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clientèle idéale -->
+  <section class="section ideal-section">
+    <div class="container">
+      <h2 class="section-title">Pour qui est mon accompagnement</h2>
+      <div class="ideal-content">
+        <p class="ideal-intro">Mon accompagnement s'adresse à des femmes sportives d'endurance qui souhaitent :</p>
+        <ul class="ideal-list">
+          <li>Mieux comprendre leur corps pour ne plus douter</li>
+          <li>Sortir de l'incertitude et des essais répétés</li>
+          <li>Avancer avec plus de clarté et de cohérence</li>
+          <li>Construire une performance durable, sans s'épuiser</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problématiques courantes -->
+  <section class="section issues-section">
+    <div class="container">
+      <h2 class="section-title">Ce que j'accompagne le plus souvent</h2>
+      <div class="issues-grid">
+        <div class="issue-card">
+          <span class="issue-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3c571d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"></rect><line x1="23" y1="10" x2="23" y2="14"></line><line x1="5" y1="10" x2="5" y2="14"></line><line x1="9" y1="10" x2="9" y2="14"></line></svg>
+          </span>
+          <h3>Baisse de vitalité<br>Fatigue persistante</h3>
+        </div>
+        <div class="issue-card">
+          <span class="issue-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3c571d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9"></path><polyline points="13 11 9 17 15 17 11 23"></polyline></svg>
+          </span>
+          <h3>Stress chronique<br>Troubles du sommeil</h3>
+        </div>
+        <div class="issue-card">
+          <span class="issue-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3c571d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"></path><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"></path></svg>
+          </span>
+          <h3>Déséquilibres hormonaux<br>Cycles irréguliers</h3>
+        </div>
+        <div class="issue-card">
+          <span class="issue-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3c571d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg>
+          </span>
+          <h3>Difficultés de récupération<br>Stagnation des performances</h3>
+        </div>
+        <div class="issue-card">
+          <span class="issue-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3c571d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><line x1="12" y1="8" x2="12" y2="16"></line></svg>
+          </span>
+          <h3>Blessures récurrentes<br>Fragilité immunitaire</h3>
+        </div>
+        <div class="issue-card">
+          <span class="issue-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3c571d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c-4.97 0-7-3.58-7-7 0-2.47 1.2-4.85 3-6.5 0 2.5 2 3.5 2 3.5-0.5-3 1.5-6 4-8 0.5 2 1.5 3 3 4 1.5 1 2 3.5 2 5 0 1.5-0.5 3-1 4"></path><path d="M12 22c-1.66 0-3-1.5-3-3.5 0-1.2 0.5-2.3 1.5-3 0 1 0.8 1.5 0.8 1.5-0.2-1.2 0.6-2.5 1.7-3.2 0.2 0.8 0.6 1.2 1.2 1.6 0.6 0.4 0.8 1.4 0.8 2 0 0.6-0.2 1.2-0.4 1.6"></path></svg>
+          </span>
+          <h3>Sensation de<br>"tirer sur la corde"</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comment je travaille -->
+  <section class="section method-section">
+    <div class="container">
+      <h2 class="section-title">Comment je travaille</h2>
+      <div class="method-content">
+        <p>
+          L'accompagnement s'intègre dans ta réalité, sans ajouter de contraintes.
+        </p>
+        <p>
+          L'objectif : alléger la charge mentale en clarifiant ce qui compte vraiment.
+        </p>
+      </div>
+      <blockquote class="method-conclusion">Ensemble, nous construisons une progression réaliste, ajustée dans le temps, qui te permet de retrouver une énergie plus stable, une meilleure confiance en ton corps et une vision claire de ce qui est bon pour toi.</blockquote>
+
+    </div>
+  </section>
+
+  <!-- FAQ Accompagnement -->
+  <section class="section faq-section">
+    <div class="container">
+      <div class="faq-accompagnement">
+        <h2 class="section-title">Des questions sur l'accompagnement ?</h2>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <h3>À qui s'adresse cet accompagnement ?</h3>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <p>Cet accompagnement s'adresse à des femmes sportives d'endurance engagées dans leur pratique, quel que soit leur niveau, dès lors qu'elles souhaitent progresser avec plus de cohérence et de compréhension.</p>
+              <p>Il concerne autant celles qui visent un objectif de performance précis que celles qui ressentent un décalage entre leurs efforts et leurs résultats : fatigue persistante, récupération difficile, cycles irréguliers, syndrome prémenstruel marqué, inconfort digestif à l'effort ou douleurs récurrentes.</p>
+              <p>Il ne s'agit pas d'un programme standardisé, mais d'un travail stratégique adapté au niveau, aux objectifs et au fonctionnement propre à chaque sportive.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <h3>Comment se déroule l'accompagnement ?</h3>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <p>L'accompagnement débute par une analyse approfondie de ton contexte physiologique : fonctionnement hormonal, qualité de récupération, alimentation, niveau de stress et contraintes de vie. Cette étape permet d'identifier les mécanismes qui freinent l'adaptation plutôt que de se limiter aux symptômes visibles.</p>
+              <p>Le travail s'inscrit ensuite dans une logique progressive, avec des points réguliers pour ajuster les processus physiologiques clés — équilibre hormonal, régulation du système nerveux, disponibilité énergétique — afin de restaurer une capacité d'adaptation stable et durable.</p>
+              <p>L'objectif n'est pas de modifier ton entraînement, mais d'optimiser les fondations physiologiques qui permettent à ton corps de progresser.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <h3>Quelle est la durée moyenne d'un accompagnement ?</h3>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <p>La durée dépend du point de départ et des objectifs. En pratique, restaurer un équilibre physiologique stable — qu'il s'agisse de récupération, d'énergie ou de régulation hormonale — nécessite plusieurs mois pour permettre de véritables adaptations.</p>
+              <p>Un travail en profondeur demande du temps : il s'agit de stabiliser les paramètres clés, d'observer les réponses du corps et d'ajuster progressivement. L'enjeu n'est pas la rapidité, mais la cohérence et la pérennité des résultats.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <h3>Quel est le tarif de l'accompagnement ?</h3>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <p>L'accompagnement est construit sur mesure en fonction de ta situation, de tes objectifs et de la durée nécessaire. Le tarif est défini lors de l'appel dédié qui suit l'appel découverte, une fois que nous avons toutes les deux une vision claire de ce qui fait sens pour toi.</p>
+              <p>Ce que je peux dire : il s'agit d'un investissement dans ta santé et ta performance sur le long terme, pas d'une prestation standardisée.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <h3>À quelle fréquence avons-nous des échanges ?</h3>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <p>L'accompagnement repose sur un suivi continu et structuré. Des séances régulières permettent d'analyser les évolutions et d'ajuster les orientations en fonction des réponses physiologiques observées. La fréquence est définie en fonction de ta situation, de tes objectifs et de ton rythme de vie.</p>
+              <p>Entre ces points clés, tu ne restes pas seule face aux ajustements. Un canal d'échange défini au préalable permet de maintenir un lien et d'apporter des éclairages lorsque c'est nécessaire.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <h3>Cet accompagnement est-il compatible avec une vie professionnelle et familiale chargée ?</h3>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <p>Oui, précisément parce qu'il est conçu pour intégrer les contraintes réelles. La performance durable ne repose pas uniquement sur le sport, mais sur l'équilibre global entre physiologie, récupération et responsabilités quotidiennes.</p>
+              <p>La stratégie construite tient compte de ta charge mentale, de tes disponibilités et de ton contexte personnel. L'objectif est de soutenir ton énergie, ta régulation hormonale et ton équilibre global, sans ajouter de pression inutile.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <h3>Interviens-tu sur la planification de l'entraînement ?</h3>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <p>Non. Je ne conçois pas de plans d'entraînement et je ne modifie pas la charge ou la structure des séances, qui relèvent du coach sportif ou du préparateur physique.</p>
+              <p>Mon intervention porte sur les fondations physiologiques qui conditionnent l'adaptation : qualité du sommeil, disponibilité énergétique, stratégies nutritionnelles de ravitaillement, régulation hormonale, équilibre du système nerveux et confort digestif.</p>
+              <p>Je n'agis pas sur le contenu des séances, mais sur la capacité du corps à y répondre efficacement.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <h3>Que se passe-t-il après l'accompagnement ?</h3>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <p>L'objectif ne se limite pas à transmettre des recommandations. Il vise à t'aider à comprendre les mécanismes physiologiques qui influencent ton énergie, ta récupération et ton équilibre hormonal.</p>
+              <p>Au fil du suivi, tu apprends à identifier les signaux pertinents — variations de fatigue, tolérance à l'effort, qualité du sommeil, inconfort digestif, fluctuations du cycle — afin d'agir avec discernement plutôt que par approximation.</p>
+              <p>À la fin de l'accompagnement, tu disposes d'une lecture plus claire de ton fonctionnement et des leviers qui te concernent. Tu deviens ainsi actrice de ta progression, avec davantage de cohérence et moins de doutes dans tes décisions.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <h3>Par où commencer ?</h3>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <p>Par un appel découverte gratuit et sans engagement — pour explorer ta situation, tes objectifs et vérifier ensemble si une collaboration a du sens.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top: 48px;">
+        <a href="https://calendly.com/marlenepetit/appel-clarification" class="btn btn-on-sage" target="_blank" rel="noopener">
+          Réserver un appel
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* ============================================================
+     HERO — VALEURS AJUSTABLES
+     Modifie les valeurs ci-dessous pour ajuster les espacements
+     ============================================================ */
+
+  .hero {
+    background-color: var(--color-sage);
+    padding: 90px 0 90px;              /* === AJUSTE : espacement haut/bas du hero === */
+    overflow: hidden;
+  }
+
+  .hero-container {
+    max-width: 1200px;                 /* === AJUSTE : largeur max du contenu === */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 0;
+    align-items: center;
+    padding: 0 50px;                   /* === AJUSTE : marge gauche/droite du contenu === */
+  }
+
+  .hero-content {
+    position: relative;
+    padding-right: 2rem;               /* === AJUSTE : espace entre texte et image === */
+  }
+
+  .hero-card {
+    background-color: var(--color-white);
+    margin: 20px;                      /* === AJUSTE : marge autour de la carte blanche === */
+    padding: 50px;                     /* === AJUSTE : espacement intérieur de la carte === */
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  /* === AJUSTE : ombre de la carte === */
+  }
+
+  .hero-card h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--color-green-dark);
+    line-height: 38px;
+    letter-spacing: 1.2px;
+    text-transform: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-card h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    color: #424242;
+    text-transform: none;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .hero-btn-wrap {
+    text-align: center;                /* centre le bouton sans toucher au texte */
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: -53px;                 /* === AJUSTE : décalage image vers le haut === */
+    margin-right: -53px;               /* === AJUSTE : décalage image vers la droite === */
+    margin-bottom: -53px;              /* === AJUSTE : décalage image vers le bas === */
+    margin-left: -120px;                /* === AJUSTE : décalage image vers la gauche (chevauchement carte) === */
+    z-index: 0;
+    position: relative;
+  }
+
+  .hero-image img {
+    width: 70%;
+    max-width: 420px;                  /* === AJUSTE : largeur max de l'image === */
+    max-height: 500px;                 /* === AJUSTE : hauteur max de l'image === */
+    height: auto;
+    object-fit: cover;
+    object-position: center center;       /* === AJUSTE : cadrage de l'image (center top, center center, etc.) === */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  /* === AJUSTE : ombre de la photo === */
+  }
+
+  /* Problem */
+  .problem-section {
+    background-color: var(--color-white);           /* === AJUSTE : fond blanc === */
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;                  /* === AJUSTE : largeur colonnes === */
+    align-items: center;
+    gap: 48px;                                      /* === AJUSTE : espace entre les 2 colonnes === */
+    max-width: 800px;
+    margin: 32px auto 0;                            /* === AJUSTE : marge au-dessus de la grille === */
+  }
+
+  .problem-intro {
+    font-size: 17px;                                /* === AJUSTE : taille texte intro === */
+    color: var(--color-heading);
+    font-weight: 500;
+    margin-bottom: 8px;                             /* === AJUSTE : espace entre chaque ligne intro === */
+  }
+
+  .problem-heading {
+    font-size: 21px;                                /* === AJUSTE : taille "Et pourtant" === */
+    font-weight: 700;
+    color: var(--color-gold);
+    margin-bottom: 16px;                            /* === AJUSTE : espace sous "Et pourtant" === */
+  }
+
+  .problem-list {
+    list-style: none;
+  }
+
+  .problem-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .problem-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-gold);
+    border-radius: 50%;
+  }
+
+  .problem-conclusion {
+    margin-top: 2.5rem;
+    font-size: 16px;                                /* === AJUSTE : taille conclusion problème === */
+    color: var(--color-heading);
+    font-style: italic;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    padding: 1.5rem 2rem;
+    border-left: 4px solid var(--color-gold);
+    background-color: rgba(192, 161, 88, 0.08);     /* === AJUSTE : fond or très léger === */
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  }
+
+  /* Approach */
+  .approach-section {
+    background-color: var(--color-sage);            /* === AJUSTE : fond vert sauge === */
+  }
+
+  .approach-intro {
+    text-align: center;
+    font-size: 18px;                                /* === AJUSTE : taille intro approche === */
+    color: #2a2a2a;
+    margin-bottom: 40px;                            /* === AJUSTE : espace sous intro approche === */
+  }
+
+  .approach-section .section-title {
+    color: #2a2a2a;                                 /* === AJUSTE : titre gris foncé sur fond vert === */
+  }
+
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .approach-card {
+    background-color: var(--color-white);
+    padding: 2rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border-top: 3px solid var(--color-gold);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);     /* === AJUSTE : ombre des cartes === */
+    transition: var(--transition);
+  }
+
+  .approach-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .approach-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;                                        /* === AJUSTE : largeur rond chiffre === */
+    height: 36px;                                       /* === AJUSTE : hauteur rond chiffre === */
+    border-radius: 50%;
+    background-color: var(--color-gold);
+    color: #ffffff;
+    font-size: 16px;                                    /* === AJUSTE : taille chiffre dans rond === */
+    font-weight: 700;
+    margin: 0 auto 12px auto;                           /* === AJUSTE : centrage + espace rond-titre === */
+  }
+
+  .approach-card .approach-title {
+    font-size: 18px;                                  /* === AJUSTE : taille titre carte === */
+    margin-bottom: 16px;                               /* === AJUSTE : espace titre-texte carte === */
+    color: var(--color-heading);
+  }
+
+  .approach-card p {
+    font-size: 15px;                                  /* === AJUSTE : taille texte carte === */
+    color: var(--color-text-light);
+    margin-bottom: 0;
+  }
+
+  /* Issues */
+  .issues-section {
+    background-color: var(--color-sage);            /* === AJUSTE : fond vert sauge === */
+  }
+
+  .issues-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .issue-card {
+    background-color: var(--color-white);
+    padding: 2rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 1px solid var(--color-gold);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+  }
+
+  .issue-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .issue-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .issue-card h3 {
+    font-size: 16px;                                  /* === AJUSTE : taille texte symptôme === */
+    color: var(--color-heading);
+    font-weight: 600;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  /* Ideal */
+  .ideal-section {
+    background-color: var(--color-white);           /* === AJUSTE : fond blanc === */
+  }
+
+  .ideal-content {
+    max-width: 800px;                               /* === AJUSTE : même largeur que le bloc problème === */
+    margin: 0 auto;
+  }
+
+  .ideal-intro {
+    text-align: left;
+    font-size: 18px;                                /* === AJUSTE : taille intro === */
+    color: var(--color-heading);                     /* === AJUSTE : gris foncé intro === */
+    margin-bottom: 2rem;
+  }
+
+  .ideal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .ideal-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 18px;                                /* === AJUSTE : taille texte liste === */
+    color: #6b6b6b;                                 /* === AJUSTE : gris moyen liste === */
+    line-height: 1.6;
+  }
+
+  .ideal-list li::before {
+    content: '✓';
+    color: var(--color-gold);
+    font-size: 20px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Method */
+  .method-section {
+    background-color: var(--color-white);           /* === AJUSTE : fond blanc === */
+  }
+
+  .method-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .method-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  .method-conclusion {
+    margin-top: 2rem;
+    font-size: 16px;                                /* === AJUSTE : taille conclusion méthode === */
+    color: var(--color-heading);
+    font-style: italic;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    padding: 1.5rem 2rem;
+    border-left: 4px solid var(--color-gold);
+    background-color: rgba(192, 161, 88, 0.08);     /* === AJUSTE : fond or très léger === */
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .approach-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .ideal-list {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .hero {
+      padding: 0;
+    }
+
+    .hero-container {
+      grid-template-columns: 1fr;
+      padding: 50px 40px 65px;
+    }
+
+    .hero-image {
+      order: -1;                          /* === image au-dessus de la carte dès tablette === */
+      justify-content: center;
+      margin-top: -30px;                  /* === AJUSTE TABLETTE : marge haut de la photo === */
+      margin-right: 0px;                /* === AJUSTE TABLETTE : marge droite de la photo === */
+      margin-bottom: -30px;               /* === AJUSTE TABLETTE : marge bas de la photo === */
+      margin-left: 0px;                 /* === AJUSTE TABLETTE : marge gauche de la photo === */
+    }
+
+    .hero-image img {
+      width: 55%;
+      height: auto;
+    }
+
+    .hero-card {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-container {
+      padding: 20px;
+    }
+
+    .hero-content {
+      padding-right: 0;                 /* supprime le décalage desktop */
+    }
+
+
+    .hero-image {
+      margin-top: 20px;                  /* === AJUSTE MOBILE : marge haut de la photo === */
+      margin-right: -67px;                /* === AJUSTE MOBILE : marge droite de la photo === */
+      margin-bottom: -50px;             /* === AJUSTE MOBILE : chevauchement photo/carte (négatif = plus de chevauchement) === */
+      margin-left: -67px;                 /* === AJUSTE MOBILE : marge gauche de la photo === */
+    }
+
+    .hero-image img {
+      width: 70%;                        /* === AJUSTE MOBILE : largeur de la photo (%) === */
+      height: auto;
+      max-height: 300px;                 /* === AJUSTE MOBILE : hauteur max de la photo === */
+    }
+
+    .hero-card {
+      position: relative;
+      z-index: 2;
+      margin-top: 0px;                  /* === AJUSTE MOBILE : marge haut de la carte === */
+      margin-right: 20px;               /* === AJUSTE MOBILE : marge droite de la carte === */
+      margin-bottom: 20px;               /* === AJUSTE MOBILE : marge bas de la carte === */
+      margin-left: 20px;                /* === AJUSTE MOBILE : marge gauche de la carte === */
+      padding: 20px;                    /* === AJUSTE MOBILE : espacement intérieur de la carte === */
+      text-align: center;
+    }
+
+    .btn-hero {
+      padding: 0.7em 1.5em;             /* === AJUSTE MOBILE : padding du bouton === */
+      font-size: 16px;                   /* === AJUSTE MOBILE : taille texte du bouton === */
+    }
+
+    .problem-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .approach-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .issues-grid {
+      grid-template-columns: 1fr;
+    }
+
+  }
+
+  /* ============================================================
+     FAQ ACCORDÉON — Style carte (inspiré timeline)
+     ============================================================ */
+
+  /* FAQ styles déplacés dans global.css */
+</style>
+
+<script>
+  document.querySelectorAll('.faq-header').forEach(function(header) {
+    header.addEventListener('click', function() {
+      var item = this.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+
+      /* Ferme tous les items ouverts */
+      document.querySelectorAll('.faq-item.open').forEach(function(el) {
+        el.querySelector('.faq-body').style.setProperty('--body-height', '0px');
+        el.classList.remove('open');
+      });
+
+      /* Ouvre l'item cliqué s'il n'était pas déjà ouvert */
+      if (!isOpen) {
+        var body = item.querySelector('.faq-body');
+        var inner = item.querySelector('.faq-body-inner');
+        var h = inner.scrollHeight + 10;
+        body.style.setProperty('--body-height', h + 'px');
+        item.classList.add('open');
+      }
+    });
+  });
+</script>

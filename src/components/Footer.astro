@@ -1,0 +1,184 @@
+---
+import { Image } from 'astro:assets';
+import logoFooter from '../assets/images/logo-marlene-petit-stratege-performance-sante-feminine.webp';
+import footerBg from '../assets/images/footer-montagne-foret.webp';
+---
+
+<footer class="footer">
+  <Image
+    src={footerBg}
+    alt=""
+    width={1920}
+    height={1080}
+    class="footer-bg-image"
+    loading="lazy"
+  />
+  <div class="footer-overlay"></div>
+  <div class="footer-container">
+    <div class="footer-grid">
+      <!-- Colonne gauche : nom + sous-titre -->
+      <div class="footer-brand">
+        <p class="footer-title">Marlène Petit</p>
+        <p class="footer-subtitle">Stratège Performance & Santé Féminine</p>
+      </div>
+
+      <!-- Colonne milieu : logo -->
+      <div class="footer-center">
+        <Image
+          src={logoFooter}
+          alt="Marlène Petit - Logo"
+          width={120}
+          height={92}
+          class="footer-logo"
+        />
+      </div>
+
+      <!-- Colonne droite : liens légaux -->
+      <div class="footer-links">
+        <a href="/mentions-legales">Mentions légales</a>
+        <a href="/politique-de-confidentialite">Politique de confidentialité</a>
+        <a href="/conditions-generales-de-vente">CGV</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer-copyright-bar">
+    <p class="footer-copyright">
+      Tous droits réservés &copy;{new Date().getFullYear()} Marlène PETIT
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    position: relative;
+    overflow: hidden;
+    padding: 48px 24px 32px;                               /* === AJUSTE : espacement haut / gauche-droite / bas du footer === */
+    margin-top: 0px;                                       /* === AJUSTE : espace au-dessus du footer === */
+  }
+
+  .footer-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .footer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);            /* === AJUSTE : opacité du fond noir (0.7 = 70%) === */
+    z-index: 1;
+  }
+
+  .footer-container {
+    position: relative;
+    z-index: 2;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 32px;                                             /* === AJUSTE : espace entre les 3 colonnes === */
+    margin-bottom: 24px;                                   /* === AJUSTE : espace sous la grille === */
+  }
+
+  /* Colonne gauche */
+  .footer-brand {
+    text-align: left;
+    justify-self: start;
+  }
+
+  .footer-title {
+    font-family: 'Corinthia', cursive;
+    font-size: 40px;                                       /* === AJUSTE : taille du nom en Corinthia === */
+    font-weight: 700;
+    color: var(--color-white);
+    text-align: center;
+    margin-bottom: 12px;                                   /* === AJUSTE : espace sous le nom === */
+    padding-bottom: 0px;                                  /* === AJUSTE : espace entre le nom et le trait === */
+    border-bottom: 1px solid var(--color-gold);            /* === AJUSTE : trait or sous le nom === */
+  }
+
+  .footer-subtitle {
+    font-size: 14px;                                       /* === AJUSTE : taille sous-titre === */
+    color: var(--color-white);
+    font-weight: 500;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  /* Colonne milieu */
+  .footer-center {
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin: 0 auto;
+    border-radius: 4px;
+  }
+
+  /* Colonne droite */
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;                                              /* === AJUSTE : espace entre les liens === */
+  }
+
+  .footer-links a {
+    font-size: 14px;                                       /* === AJUSTE : taille texte liens === */
+    color: var(--color-white);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .footer-links a:hover {
+    color: var(--color-gold);
+  }
+
+  /* Bande noire copyright */
+  .footer-copyright-bar {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.9);               /* === AJUSTE : opacité bande copyright === */
+    margin-top: 32px;                                    /* === AJUSTE : espace au-dessus de la bande === */
+    margin-left: -24px;                                  /* === AJUSTE : débordement gauche de la bande === */
+    margin-right: -24px;                                 /* === AJUSTE : débordement droite de la bande === */
+    margin-bottom: -32px;                                /* === AJUSTE : débordement bas de la bande === */
+    padding: 12px 24px;                                  /* === AJUSTE : espacement intérieur de la bande === */
+  }
+
+  .footer-copyright {
+    text-align: center;
+    font-size: 13px;                                     /* === AJUSTE : taille texte copyright === */
+    color: var(--color-white);
+    margin-bottom: 0;
+  }
+
+  /* Responsive : retour en une colonne */
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .footer-brand {
+      text-align: center;
+      justify-self: center;
+    }
+
+    .footer-links {
+      align-items: center;
+    }
+  }
+</style>

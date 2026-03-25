@@ -1,0 +1,207 @@
+---
+const currentPath = Astro.url.pathname;
+const navLinks = [
+  { href: '/', label: 'Accueil' },
+  { href: '/approche', label: 'Approche' },
+  { href: '/a-propos', label: 'À propos' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<header class="header">
+  <div class="header-container">
+    <a href="/" class="logo">
+      <span class="logo-text">Marlène Petit</span>
+    </a>
+
+    <button class="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span class="hamburger"></span>
+    </button>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <ul class="nav-list">
+        {navLinks.map(link => (
+          <li>
+            <a
+              href={link.href}
+              class:list={['nav-link', { active: currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-white);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+
+  .header-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    text-decoration: none;
+  }
+
+  .logo-text {
+    font-family: 'Corinthia', cursive;
+    font-size: 32px;                                           /* === AJUSTE : taille du logo Corinthia === */
+    font-weight: 700;
+    color: var(--color-gold);
+    letter-spacing: 0.5px;
+    line-height: 1;                                            /* === AJUSTE : hauteur de ligne du logo === */
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 0.3rem 0;
+    position: relative;
+    transition: var(--transition);
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-gold);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-gold);
+  }
+
+  .nav-link.active {
+    font-weight: 700;                                          /* === AJUSTE : graisse du lien actif === */
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-heading);
+    position: relative;
+    transition: var(--transition);
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-heading);
+    transition: var(--transition);
+  }
+
+  .hamburger::before {
+    top: -7px;
+  }
+
+  .hamburger::after {
+    bottom: -7px;
+  }
+
+  /* Mobile open state */
+  .mobile-toggle[aria-expanded="true"] .hamburger {
+    background-color: transparent;
+  }
+
+  .mobile-toggle[aria-expanded="true"] .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .mobile-toggle[aria-expanded="true"] .hamburger::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+  }
+
+  @media (max-width: 768px) {
+    .mobile-toggle {
+      display: block;
+    }
+
+    .nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: var(--color-white);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .nav.open {
+      max-height: 300px;
+    }
+
+    .nav-list {
+      flex-direction: column;
+      gap: 0;
+      padding: 0.5rem 0;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 0.85rem 1.5rem;
+    }
+
+    .nav-link::after {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector('.mobile-toggle');
+  const nav = document.querySelector('.nav');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    nav?.classList.toggle('open');
+  });
+</script>

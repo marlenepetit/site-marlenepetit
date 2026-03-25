@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview Timeline Accordéon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #f9f9f6;
+      padding: 40px 20px;
+      color: #2c2c2c;
+    }
+
+    .tl-container {
+      max-width: 600px; /* === AJUSTE : largeur max timeline === */
+      margin: 0 auto;
+    }
+
+    /* === SÉPARATEUR D'ÈRE === */
+    .tl-era {
+      display: flex;
+      align-items: center;
+      gap: 14px; /* === AJUSTE : espace entre label et ligne === */
+      margin-bottom: 20px; /* === AJUSTE : marge bas ère === */
+      margin-top: 12px; /* === AJUSTE : marge haut ère === */
+    }
+
+    .tl-era-label {
+      font-size: 11px; /* === AJUSTE : taille label ère === */
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      padding: 4px 14px; /* === AJUSTE : espacement intérieur label ère === */
+      border-radius: 20px;
+    }
+
+    .tl-era-line {
+      flex: 1;
+      height: 1px;
+    }
+
+    /* Ère Recherche scientifique — vert foncé */
+    .era-science .tl-era-label {
+      background: rgba(60, 87, 29, 0.08);
+      color: #3c571d;
+      border: 1px solid rgba(60, 87, 29, 0.25);
+    }
+    .era-science .tl-era-line { background: rgba(60, 87, 29, 0.15); }
+
+    /* Ère Évolution professionnelle — vert sauge */
+    .era-transition .tl-era-label {
+      background: rgba(154, 177, 139, 0.12);
+      color: #6b8a5a;
+      border: 1px solid rgba(154, 177, 139, 0.35);
+    }
+    .era-transition .tl-era-line { background: rgba(154, 177, 139, 0.25); }
+
+    /* Ère Aujourd'hui — or */
+    .era-today .tl-era-label {
+      background: rgba(192, 161, 88, 0.1);
+      color: #a8893e;
+      border: 1px solid rgba(192, 161, 88, 0.3);
+    }
+    .era-today .tl-era-line { background: rgba(192, 161, 88, 0.2); }
+
+    /* === SPACER ENTRE ÈRES === */
+    .tl-spacer {
+      height: 28px; /* === AJUSTE : espace entre les ères === */
+    }
+
+    /* === ITEM TIMELINE === */
+    .tl-item {
+      display: flex;
+      gap: 0;
+      position: relative;
+    }
+
+    /* === SPINE (ligne + point) === */
+    .tl-spine {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 44px; /* === AJUSTE : largeur colonne spine === */
+      flex-shrink: 0;
+    }
+
+    .tl-dot {
+      width: 12px; /* === AJUSTE : taille du point === */
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 18px;
+      z-index: 1;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    /* Couleurs points par ère */
+    .era-science-item .tl-dot {
+      background: #3c571d;
+      border: 2px solid #f9f9f6;
+      box-shadow: 0 0 0 3px rgba(60, 87, 29, 0.2);
+    }
+    .era-transition-item .tl-dot {
+      background: #9ab18b;
+      border: 2px solid #f9f9f6;
+      box-shadow: 0 0 0 3px rgba(154, 177, 139, 0.2);
+    }
+    .era-today-item .tl-dot {
+      background: #c0a158;
+      border: 2px solid #f9f9f6;
+      box-shadow: 0 0 0 3px rgba(192, 161, 88, 0.2);
+    }
+
+    .tl-item.open .tl-dot {
+      transform: scale(1.3);
+    }
+
+    .tl-line {
+      width: 2px; /* === AJUSTE : épaisseur ligne spine === */
+      flex: 1;
+      margin-top: 4px;
+      min-height: 12px;
+    }
+
+    /* Couleurs lignes par ère */
+    .era-science-item .tl-line    { background: linear-gradient(to bottom, rgba(60, 87, 29, 0.3), rgba(60, 87, 29, 0.05)); }
+    .era-transition-item .tl-line { background: linear-gradient(to bottom, rgba(154, 177, 139, 0.35), rgba(154, 177, 139, 0.05)); }
+    .era-today-item .tl-line      { background: linear-gradient(to bottom, rgba(192, 161, 88, 0.3), rgba(192, 161, 88, 0.05)); }
+    .tl-item:last-child .tl-line  { background: transparent; }
+
+    /* === EN-TÊTE CLIQUABLE === */
+    .tl-content {
+      flex: 1;
+      padding-bottom: 6px;
+    }
+
+    .tl-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      padding: 14px 20px; /* === AJUSTE : espacement intérieur en-tête === */
+      background-color: #fff;
+      border-radius: 8px; /* === AJUSTE : coins arrondis === */
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); /* === AJUSTE : ombre === */
+      transition: box-shadow 0.3s, border-color 0.2s;
+      user-select: none;
+      margin-top: 8px;
+    }
+
+    .tl-header:hover {
+      box-shadow: 0 4px 16px rgba(192, 161, 88, 0.25); /* === AJUSTE : ombre or au survol === */
+    }
+
+    /* Header ouvert — bordure couleur par ère */
+    .era-science-item.open .tl-header {
+      border-color: rgba(60, 87, 29, 0.3);
+      border-radius: 8px 8px 0 0;
+      border-bottom-color: transparent;
+    }
+    .era-transition-item.open .tl-header {
+      border-color: rgba(154, 177, 139, 0.4);
+      border-radius: 8px 8px 0 0;
+      border-bottom-color: transparent;
+    }
+    .era-today-item.open .tl-header {
+      border-color: rgba(192, 161, 88, 0.4);
+      border-radius: 8px 8px 0 0;
+      border-bottom-color: transparent;
+    }
+
+    .tl-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .tl-period {
+      font-size: 11px; /* === AJUSTE : taille période === */
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    /* Couleurs périodes par ère */
+    .era-science-item .tl-period    { color: #3c571d; }
+    .era-transition-item .tl-period { color: #6b8a5a; }
+    .era-today-item .tl-period      { color: #c0a158; }
+
+    .tl-title {
+      font-size: 16px; /* === AJUSTE : taille titre === */
+      font-weight: 700;
+      color: #2c2c2c;
+      line-height: 1.35;
+    }
+
+    /* Chevron SVG */
+    .tl-chevron {
+      width: 18px; /* === AJUSTE : taille chevron === */
+      height: 18px;
+      flex-shrink: 0;
+      color: #c0a158;
+      transition: transform 0.3s, color 0.2s;
+    }
+
+    .tl-item.open .tl-chevron {
+      transform: rotate(180deg);
+    }
+
+    /* === CONTENU DÉPLIABLE === */
+    .tl-body {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s ease, opacity 0.25s ease; /* === AJUSTE : durée animation === */
+    }
+
+    .tl-item.open .tl-body {
+      max-height: 500px; /* === AJUSTE : hauteur max dépliée === */
+      opacity: 1;
+    }
+
+    .tl-body-inner {
+      padding: 16px 20px 20px; /* === AJUSTE : espacement intérieur contenu === */
+      font-size: 15px; /* === AJUSTE : taille texte contenu === */
+      color: #555;
+      line-height: 1.65;
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Bordure body-inner par ère quand ouvert */
+    .era-science-item.open .tl-body-inner    { border-color: rgba(60, 87, 29, 0.3); }
+    .era-transition-item.open .tl-body-inner { border-color: rgba(154, 177, 139, 0.4); }
+    .era-today-item.open .tl-body-inner      { border-color: rgba(192, 161, 88, 0.4); }
+
+    .tl-body-inner p { margin-bottom: 0; }
+    .tl-body-inner p + p { margin-top: 10px; }
+
+    /* Séparateur dans le contenu */
+    .tl-divider {
+      height: 1px;
+      background: rgba(0, 0, 0, 0.08);
+      margin: 14px 0; /* === AJUSTE : marge séparateur === */
+    }
+
+    /* Label de sous-section */
+    .tl-section-label {
+      font-size: 10px; /* === AJUSTE : taille label sous-section === */
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 8px;
+    }
+
+    /* Tags */
+    .tl-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px; /* === AJUSTE : espace entre tags === */
+      margin-top: 4px;
+    }
+
+    .tl-tag {
+      font-size: 12px; /* === AJUSTE : taille tag === */
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.03em;
+    }
+
+    .tag-sage {
+      background: rgba(154, 177, 139, 0.12);
+      border: 1px solid rgba(154, 177, 139, 0.3);
+      color: #5a7a4a;
+    }
+
+    .tag-gold {
+      background: rgba(192, 161, 88, 0.1);
+      border: 1px solid rgba(192, 161, 88, 0.3);
+      color: #a8893e;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .tl-spine {
+        width: 36px; /* === AJUSTE MOBILE : largeur spine === */
+      }
+
+      .tl-dot {
+        width: 10px;
+        height: 10px;
+      }
+
+      .tl-title {
+        font-size: 14px; /* === AJUSTE MOBILE : taille titre === */
+      }
+
+      .tl-era-label {
+        font-size: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="tl-container">
+
+  <!-- ─── ÈRE 1 : RECHERCHE SCIENTIFIQUE ─── -->
+  <div class="tl-era era-science">
+    <span class="tl-era-label">Recherche scientifique · 2007–2023</span>
+    <div class="tl-era-line"></div>
+  </div>
+
+  <!-- Doctorat -->
+  <div class="tl-item era-science-item">
+    <div class="tl-spine">
+      <div class="tl-dot"></div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-content">
+      <div class="tl-header" onclick="toggleItem(this)">
+        <div class="tl-meta">
+          <span class="tl-period">2007 — 2010</span>
+          <span class="tl-title">Doctorat de Physique — CEA Grenoble</span>
+        </div>
+        <svg class="tl-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <polyline points="5 8 10 13 15 8"/>
+        </svg>
+      </div>
+      <div class="tl-body">
+        <div class="tl-body-inner">
+          <p>Recherche fondamentale en physique au Commissariat à l'Énergie Atomique (CEA).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CNRS -->
+  <div class="tl-item era-science-item">
+    <div class="tl-spine">
+      <div class="tl-dot"></div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-content">
+      <div class="tl-header" onclick="toggleItem(this)">
+        <div class="tl-meta">
+          <span class="tl-period">2012 — 2023</span>
+          <span class="tl-title">Ingénieure en Physique — CNRS</span>
+        </div>
+        <svg class="tl-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <polyline points="5 8 10 13 15 8"/>
+        </svg>
+      </div>
+      <div class="tl-body">
+        <div class="tl-body-inner">
+          <p>11 ans au sein du Centre National de la Recherche Scientifique, à mener des travaux de recherche appliquée, d'ingénierie expérimentale et de publication scientifique.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-spacer"></div>
+
+  <!-- ─── ÈRE 2 : ÉVOLUTION PROFESSIONNELLE ─── -->
+  <div class="tl-era era-transition">
+    <span class="tl-era-label">Évolution professionnelle · 2019–2024</span>
+    <div class="tl-era-line"></div>
+  </div>
+
+  <!-- Naturopathie -->
+  <div class="tl-item era-transition-item">
+    <div class="tl-spine">
+      <div class="tl-dot"></div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-content">
+      <div class="tl-header" onclick="toggleItem(this)">
+        <div class="tl-meta">
+          <span class="tl-period">2019</span>
+          <span class="tl-title">Diplôme de Naturopathie — certifié FENA</span>
+        </div>
+        <svg class="tl-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <polyline points="5 8 10 13 15 8"/>
+        </svg>
+      </div>
+      <div class="tl-body">
+        <div class="tl-body-inner">
+          <p>Diplôme certifié par la Fédération Française de Naturopathie, formation de référence nationale en approche globale et intégrative de la santé.</p>
+          <div class="tl-divider"></div>
+          <div class="tl-section-label">Spécialités</div>
+          <div class="tl-tags">
+            <span class="tl-tag tag-sage">Phytothérapie</span>
+            <span class="tl-tag tag-sage">Aromathérapie</span>
+            <span class="tl-tag tag-sage">Gemmothérapie</span>
+            <span class="tl-tag tag-sage">Chronobiologie</span>
+            <span class="tl-tag tag-sage">Gestion du stress</span>
+            <span class="tl-tag tag-sage">Hygiène de vie</span>
+            <span class="tl-tag tag-sage">Alimentation santé</span>
+            <span class="tl-tag tag-sage">Micronutrition</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Micronutrition SIIN -->
+  <div class="tl-item era-transition-item">
+    <div class="tl-spine">
+      <div class="tl-dot"></div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-content">
+      <div class="tl-header" onclick="toggleItem(this)">
+        <div class="tl-meta">
+          <span class="tl-period">2019 — 2024</span>
+          <span class="tl-title">Diplôme Institutionnel — Nutrition & Micronutrition</span>
+        </div>
+        <svg class="tl-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <polyline points="5 8 10 13 15 8"/>
+        </svg>
+      </div>
+      <div class="tl-body">
+        <div class="tl-body-inner">
+          <p>Diplôme Institutionnel de Nutrition Santé et Micronutrition, délivré par la Société Internationale d'Informations Nutritionnelles. Formation complète sur 3 ans, de la physiologie aux pathologies, avec études de cas cliniques et mises en pratique.</p>
+          <div class="tl-divider"></div>
+          <div class="tl-section-label">Spécialités</div>
+          <div class="tl-tags">
+            <span class="tl-tag tag-sage">Hormono-nutrition</span>
+            <span class="tl-tag tag-sage">Gynéco-nutrition</span>
+            <span class="tl-tag tag-sage">Nutrition du sport</span>
+            <span class="tl-tag tag-sage">Microbiote</span>
+            <span class="tl-tag tag-sage">Chrono-nutrition</span>
+            <span class="tl-tag tag-sage">Neuro-nutrition</span>
+            <span class="tl-tag tag-sage">Compléments alimentaires</span>
+            <span class="tl-tag tag-sage">Bilan micronutritionnel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-spacer"></div>
+
+  <!-- ─── ÈRE 3 : ACCOMPAGNEMENT / COACHING ─── -->
+  <div class="tl-era era-today">
+    <span class="tl-era-label">Accompagnement / Coaching · depuis 2023</span>
+    <div class="tl-era-line"></div>
+  </div>
+
+  <!-- Naturopathe spécialisée -->
+  <div class="tl-item era-today-item">
+    <div class="tl-spine">
+      <div class="tl-dot"></div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-content">
+      <div class="tl-header" onclick="toggleItem(this)">
+        <div class="tl-meta">
+          <span class="tl-period">2023 — 2026</span>
+          <span class="tl-title">Naturopathe spécialisée en micronutrition</span>
+        </div>
+        <svg class="tl-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <polyline points="5 8 10 13 15 8"/>
+        </svg>
+      </div>
+      <div class="tl-body">
+        <div class="tl-body-inner">
+          <p>Pratique en cabinet avec accompagnements individuels intégrant analyse de la composition corporelle par impédancemétrie multifréquence, bilan micronutritionnel et fonctionnel.</p>
+          <div class="tl-divider"></div>
+          <div class="tl-section-label">Profils accompagnés</div>
+          <p>Troubles digestifs · Nutrition du sportif · Surpoids · Troubles hormonaux · Douleurs chroniques</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stratège -->
+  <div class="tl-item era-today-item">
+    <div class="tl-spine">
+      <div class="tl-dot"></div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="tl-content">
+      <div class="tl-header" onclick="toggleItem(this)">
+        <div class="tl-meta">
+          <span class="tl-period">Aujourd'hui</span>
+          <span class="tl-title">Stratège de la performance et de la santé féminine</span>
+        </div>
+        <svg class="tl-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <polyline points="5 8 10 13 15 8"/>
+        </svg>
+      </div>
+      <div class="tl-body">
+        <div class="tl-body-inner">
+          <p>Accompagnement des femmes sportives d'endurance — Approche scientifique & naturelle</p>
+          <div class="tl-divider"></div>
+          <div class="tl-section-label">Formation continue & veille scientifique</div>
+          <div class="tl-tags">
+            <span class="tl-tag tag-gold">Cohérence cardiaque</span>
+            <span class="tl-tag tag-gold">Analyse de la VFC</span>
+            <span class="tl-tag tag-gold">Santé féminine</span>
+            <span class="tl-tag tag-gold">Nutrition du sportif</span>
+            <span class="tl-tag tag-gold">Optimisation de la performance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggleItem(header) {
+    var item = header.closest('.tl-item');
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.tl-item.open').forEach(function(el) {
+      el.classList.remove('open');
+    });
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>

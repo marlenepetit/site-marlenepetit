@@ -1,0 +1,719 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import aboutImage from '../assets/images/marlene-petit-femme-sport-endurance.webp';
+import Timeline from '../components/Timeline.astro';
+---
+
+<Layout title="À propos" description="Naturopathe Micronutritionniste - J'aide les femmes sportives d'endurance à reprendre leur juste place dans le sport.">
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Naturopathe spécialisée en micronutrition <span class="h1-subtitle">pour femmes sportives d'endurance</span></h1>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="section mission-section">
+    <div class="mission-container">
+      <div class="mission-image">
+        <Image
+          src={aboutImage}
+          alt="Marlène Petit - Portrait"
+          width={420}
+          height={484}
+          class="about-portrait"
+        />
+      </div>
+      <div class="mission-content">
+        <div class="mission-card">
+          <h2 class="mission-statement">
+            J'aide les femmes à reprendre leur juste place dans le sport, en apprenant à travailler avec leur corps, plutôt qu'en luttant contre lui.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance féminine -->
+  <section class="section feminine-section">
+    <div class="container">
+      <h2 class="section-title">La performance féminine mérite une approche spécifique</h2>
+      <div class="content-centered">
+        <p>
+          Dans le sport d'endurance, les femmes ont longtemps appris à s'entraîner, performer et récupérer selon des modèles qui ne tiennent pas pleinement compte de leur physiologie.
+        </p>
+        <div class="factors-wrapper">
+          <div class="factors-list">
+            <div class="factor-item">Cycles hormonaux</div>
+            <div class="factor-item">Charge mentale</div>
+            <div class="factor-item">Rythme de vie</div>
+            <div class="factor-item">Sensibilité au stress</div>
+            <div class="factor-item">Récupération fluctuante</div>
+          </div>
+          <div class="factors-chevron">›</div>
+          <p class="factors-text">
+            Ces paramètres ne sont ni des faiblesses, ni des excuses.<br>Ce sont des réalités physiologiques et humaines qui influencent directement l'adaptation à l'entraînement et la performance féminine.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Penser autrement -->
+  <section class="section think-section">
+    <div class="container">
+      <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Penser la performance autrement</h2>
+    </div>
+    <div class="think-container">
+      <div class="think-image">
+        <img src="/src/assets/images/marlene-petit-vision-performance-feminine.webp" alt="Marlène Petit — vision de la performance féminine" class="think-portrait" />
+      </div>
+      <div class="think-content">
+        <div class="think-card">
+          <p class="think-text">
+            La performance féminine ne se construit pas avec des recettes, mais avec une méthode capable de s'adapter au corps féminin et aux réalités de la vie quotidienne.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parcours -->
+  <section class="section parcours-section">
+    <div class="container">
+      <h2 class="section-title">Une approche fondée sur la science et la physiologie du corps féminin</h2>
+      <div class="parcours-stacked">
+        <div class="col-text-stacked">
+          <p class="decorative-label">Mon approche</p>
+          <p>
+            Mon approche repose sur des outils issus de la naturopathie et de la micronutrition, intégrés dans un raisonnement scientifique, hérité de mon parcours d'ingénieure.
+          </p>
+          <p>
+            L'objectif n'est pas d'empiler des conseils, mais d'identifier ce qui freine réellement l'adaptation du corps, puis d'agir de manière ciblée et progressive.
+          </p>
+          <p>
+            Ma démarche s'inscrit dans un cadre structuré que j'ai développé et nommé <strong>Protocole PERFORM</strong>, pensé spécifiquement pour les femmes sportives d'endurance.
+          </p>
+          <div style="margin-top: 30px; text-align: center;">
+            <a href="/approche" class="btn">Protocole PERFORM</a>
+          </div>
+        </div>
+        <hr class="section-divider" />
+        <div class="col-timeline-stacked">
+          <p class="decorative-label">Mon parcours</p>
+          <Timeline />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pour qui -->
+  <section class="section who-section">
+    <div class="container">
+      <h2 class="section-title">Cette approche est faite pour toi si…</h2>
+      <div class="who-grid">
+        <div class="who-card">
+          <span class="who-check">✓</span>
+          <p>Tu es une femme sportive d'endurance, engagée dans ta pratique</p>
+        </div>
+        <div class="who-card">
+          <span class="who-check">✓</span>
+          <p>Tu ressens une fatigue persistante ou une perte de vitalité</p>
+        </div>
+        <div class="who-card">
+          <span class="who-check">✓</span>
+          <p>Tu ressens une stagnation malgré tes efforts</p>
+        </div>
+        <div class="who-card">
+          <span class="who-check">✓</span>
+          <p>Ton corps te semble être devenu un frein plutôt qu'un allié</p>
+        </div>
+        <div class="who-card">
+          <span class="who-check">✓</span>
+          <p>Tu as déjà "essayé beaucoup de choses" sans résultats durables</p>
+        </div>
+        <div class="who-card">
+          <span class="who-check">✓</span>
+          <p>Tu souhaites comprendre le fonctionnement de ton corps</p>
+        </div>
+      </div>
+      <p class="faq-cta-text">Tu te reconnais dans ces situations ? Parlons-en.</p>
+      <div class="text-center">
+        <a href="https://calendly.com/marlenepetit/appel-clarification" class="btn btn-on-sage" target="_blank" rel="noopener">
+          Réserver un appel
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* Page Header */
+  .page-header {
+    background-color: var(--color-sage);
+    padding-top: 60px; /* === AJUSTE : espace au-dessus du H1 === */
+    padding-bottom: 40px; /* === AJUSTE : espace en-dessous du H1 (entre H1 et section suivante) === */
+    padding-left: 24px; /* === AJUSTE : marge gauche header === */
+    padding-right: 24px; /* === AJUSTE : marge droite header === */
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: 32px; /* === AJUSTE : taille H1 === */
+    color: var(--color-white);
+    margin-bottom: -20px; /* === AJUSTE : marge sous le H1 === */
+  }
+
+  .h1-subtitle {
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px; /* === AJUSTE : taille sous-titre H1 === */
+    font-weight: 400;
+    display: block;
+    margin-top: 8px; /* === AJUSTE : espace entre titre et sous-titre === */
+  }
+
+  /* Two column */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: center;
+  }
+
+  .two-col.reverse .col-timeline {
+    order: -1;
+  }
+
+  .col-text {
+    padding: 2.5rem;
+  }
+
+  .col-image {
+    position: relative;
+  }
+
+  .rounded-image {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 0;
+  }
+
+  /* Mission — carte blanche style hero */
+  .mission-section {
+    background-color: var(--color-sage);
+    overflow: hidden;
+    position: relative;
+    padding: 60px 0 100px; /* === AJUSTE : espacement haut/bas de la section === */
+  }
+
+  .mission-container {
+    max-width: 1200px; /* === AJUSTE : largeur max du contenu === */
+    margin: 0 auto;
+    margin-bottom: 0px; /* === AJUSTE : espace sous le bloc image+texte === */
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 0;
+    align-items: stretch;
+    padding: 0 50px; /* === AJUSTE : marge gauche/droite du contenu === */
+  }
+
+  .mission-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -40px; /* === AJUSTE : marge haut de la photo === */
+    margin-right: 0px; /* === AJUSTE : marge droite de la photo (négatif = chevauchement carte) === */
+    margin-bottom: 0px; /* === AJUSTE : marge bas de la photo === */
+    margin-left: 0px; /* === AJUSTE : marge gauche de la photo === */
+    position: relative;
+    z-index: 2;
+  }
+
+  .about-portrait {
+    width: 100%;
+    max-width: 60%; /* === AJUSTE : largeur max de la photo === */
+    height: auto;
+    object-fit: cover;
+    box-shadow:
+      -2px -2px 10px 0px rgba(0, 0, 0, 0.3),        /* === AJUSTE : ombre intermédiaire (x y flou étendue couleur) === */
+      -17px -17px 0px 0px rgba(192, 161, 88, 1);     /* === AJUSTE : ombre or (x y flou étendue couleur) === */
+  }
+
+  .mission-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .mission-card {
+    background-color: rgba(255, 255, 255, 0.85); /* === AJUSTE : fond blanc transparent (0 = invisible, 1 = opaque) === */
+    height: 90%; /* === AJUSTE : hauteur de la carte en % de la hauteur de la photo === */
+    display: flex;
+    align-items: center;
+    margin-top: 0px; /* === AJUSTE : marge haut de la carte === */
+    margin-right: 50px; /* === AJUSTE : marge droite de la carte === */
+    margin-bottom: 0px; /* === AJUSTE : marge bas de la carte === */
+    margin-left: -110px; /* === AJUSTE : marge gauche de la carte === */
+    padding: 50px; /* === AJUSTE : espacement intérieur de la carte === */
+    position: relative;
+    top: 40px; /* === AJUSTE : décalage vertical de la carte (positif = vers le bas, sans impacter l'image) === */
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* === AJUSTE : ombre de la carte === */
+  }
+
+  .mission-statement {
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px; /* === AJUSTE : taille texte mission === */
+    font-weight: 500;
+    color: var(--color-heading);
+    line-height: 1.7;
+    margin: 0;
+    position: relative;
+    padding-top: 40px; /* === AJUSTE : espace au-dessus du texte pour le guillemet === */
+    padding-left: 30px; /* === AJUSTE : alinéa du texte par rapport au guillemet === */
+  }
+
+  .mission-statement::before {
+    content: '\201C';
+    font-family: 'Corinthia', cursive;
+    font-size: 200px; /* === AJUSTE : taille du guillemet === */
+    color: var(--color-gold);
+    position: absolute;
+    top: -30px; /* === AJUSTE : position verticale du guillemet === */
+    left: 0px; /* === AJUSTE : position horizontale du guillemet === */
+    line-height: 1;
+    opacity: 0.9; /* === AJUSTE : opacité du guillemet === */
+  }
+
+  /* Feminine */
+  .feminine-section {
+    background-color: var(--color-white);
+  }
+
+  .content-centered {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center; /* === AJUSTE : centrage texte intro === */
+  }
+
+  .factors-wrapper {
+    display: grid;
+    grid-template-columns: auto auto 1fr; /* === AJUSTE : colonnes items | chevron | citation === */
+    gap: 30px; /* === AJUSTE : espace entre colonnes === */
+    align-items: center;
+    margin-top: 40px; /* === AJUSTE : marge haut conteneur === */
+  }
+
+  .factors-text {
+    margin: 0;
+    background-color: var(--color-white); /* === AJUSTE : fond carte facteurs === */
+    padding: 30px; /* === AJUSTE : espacement intérieur carte facteurs === */
+    border-left: 3px solid var(--color-gold); /* === AJUSTE : bordure gauche carte facteurs (ordi) === */
+    border-radius: 8px; /* === AJUSTE : coins arrondis carte facteurs === */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); /* === AJUSTE : ombre carte facteurs === */
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px; /* === AJUSTE : taille texte facteurs === */
+    color: var(--color-heading);
+    line-height: 1.7;
+  }
+
+  .factors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* === AJUSTE : espace entre les items === */
+  }
+
+  .factor-item {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px; /* === AJUSTE : taille texte item === */
+    font-weight: 700;
+    color: var(--color-gold); /* === AJUSTE : couleur texte item === */
+  }
+
+  .factors-chevron {
+    font-size: 130px; /* === AJUSTE : taille chevron === */
+    color: var(--color-gold); /* === AJUSTE : couleur chevron === */
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .highlight-box {
+    background-color: var(--color-bg);
+    padding: 1.25rem 1.5rem;
+    border-left: 4px solid var(--color-gold);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    font-style: italic;
+    color: var(--color-heading);
+  }
+
+  /* Think */
+  .think-section {
+    background-color: var(--color-sage); /* === AJUSTE : fond vert sauge === */
+    position: relative;
+    padding: 50px 0 100px; /* === AJUSTE : espacement haut/bas de la section think === */
+  }
+
+  .think-section .section-title {
+    color: var(--color-white); /* === AJUSTE : couleur titre think === */
+  }
+
+  .think-container {
+    max-width: 1200px; /* === AJUSTE : largeur max du contenu think === */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 0;
+    align-items: stretch;
+    padding: 0 50px; /* === AJUSTE : marge gauche/droite du contenu think === */
+  }
+
+  .think-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* === AJUSTE : marge haut de la photo think === */
+    margin-right: 0px; /* === AJUSTE : marge droite de la photo think === */
+    margin-bottom: 0px; /* === AJUSTE : marge bas de la photo think === */
+    margin-left: 0px; /* === AJUSTE : marge gauche de la photo think === */
+    position: relative;
+    z-index: 2;
+  }
+
+  .think-portrait {
+    width: 100%;
+    max-width: 60%; /* === AJUSTE : largeur max de la photo think === */
+    height: auto;
+    object-fit: cover;
+    box-shadow:
+      -2px -2px 10px 0px rgba(0, 0, 0, 0.3),        /* === AJUSTE : ombre intermédiaire think === */
+      -17px -17px 0px 0px rgba(192, 161, 88, 1);     /* === AJUSTE : ombre or think === */
+  }
+
+  .think-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .think-card {
+    background-color: rgba(255, 255, 255, 0.85); /* === AJUSTE : fond blanc transparent think === */
+    height: 90%; /* === AJUSTE : hauteur de la carte think en % === */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px; /* === AJUSTE : marge haut de la carte think === */
+    margin-right: 50px; /* === AJUSTE : marge droite de la carte think === */
+    margin-bottom: 0px; /* === AJUSTE : marge bas de la carte think === */
+    margin-left: -110px; /* === AJUSTE : marge gauche de la carte think (négatif = chevauchement) === */
+    padding: 50px; /* === AJUSTE : espacement intérieur de la carte think === */
+    position: relative;
+    top: 40px; /* === AJUSTE : décalage vertical de la carte think === */
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* === AJUSTE : ombre de la carte think === */
+  }
+
+  .think-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px; /* === AJUSTE : taille texte think === */
+    font-weight: 500;
+    color: var(--color-heading);
+    line-height: 1.7;
+    margin: 0;
+    position: relative;
+    padding-top: 40px; /* === AJUSTE : espace au-dessus du texte pour le guillemet think === */
+    padding-left: 30px; /* === AJUSTE : alinéa du texte think === */
+  }
+
+  .think-text::before {
+    content: '\201C';
+    font-family: 'Corinthia', cursive;
+    font-size: 200px; /* === AJUSTE : taille du guillemet think === */
+    color: var(--color-gold);
+    position: absolute;
+    top: -30px; /* === AJUSTE : position verticale du guillemet think === */
+    left: 0px; /* === AJUSTE : position horizontale du guillemet think === */
+    line-height: 1;
+    opacity: 0.9; /* === AJUSTE : opacité du guillemet think === */
+  }
+
+  /* Parcours — sage bg with offset image */
+  .parcours-section {
+    background-color: var(--color-white); /* === AJUSTE : fond blanc === */
+    overflow: visible;
+    position: relative;
+  }
+
+  .parcours-section .section-title {
+    color: var(--color-dark-green); /* === AJUSTE : couleur titre === */
+  }
+
+  .decorative-label {
+    font-family: 'Corinthia', cursive;
+    font-size: 40px; /* === AJUSTE : taille label décoratif === */
+    color: var(--color-gold); /* === AJUSTE : couleur label décoratif === */
+    margin-bottom: 0px; /* === AJUSTE : espace sous le label === */
+    text-align: center;
+  }
+
+  .parcours-stacked {
+    max-width: 750px; /* === AJUSTE : largeur max du contenu empilé === */
+    margin: 0 auto;
+  }
+
+  .col-text-stacked {
+    margin-bottom: 40px; /* === AJUSTE : espace entre texte et timeline === */
+    text-align: center; /* === AJUSTE : alignement du texte === */
+  }
+
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--color-gold); /* === AJUSTE : épaisseur et couleur séparateur === */
+    opacity: 0.4; /* === AJUSTE : opacité séparateur === */
+    margin: 30px 0 30px; /* === AJUSTE : espace au-dessus/en-dessous du séparateur === */
+  }
+
+  .col-timeline-stacked :global(.tl-container) {
+    margin-top: 0px; /* === AJUSTE : rapproche la timeline du label "Mon parcours" === */
+  }
+
+  .col-timeline-stacked {
+    max-width: 600px; /* === AJUSTE : largeur max de la timeline === */
+    margin: 0 auto;
+  }
+
+  /* Who */
+  .who-section {
+    background-color: var(--color-sage);            /* === AJUSTE : fond vert sauge === */
+  }
+
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* === AJUSTE : 2 colonnes === */
+    gap: 24px; /* === AJUSTE : espace entre les cartes === */
+    max-width: 900px; /* === AJUSTE : largeur max grille === */
+    margin: 0 auto;
+  }
+
+  .who-card {
+    background-color: var(--color-white);
+    padding: 30px 24px; /* === AJUSTE : padding intérieur carte === */
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 1px solid var(--color-gold); /* === AJUSTE : bordure or === */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* === AJUSTE : ombre carte === */
+    transition: var(--transition);
+  }
+
+  .who-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .who-check {
+    display: block;
+    font-size: 24px; /* === AJUSTE : taille coche === */
+    font-weight: 700;
+    color: var(--color-gold); /* === AJUSTE : couleur coche === */
+    margin-bottom: 10px; /* === AJUSTE : espace sous la coche === */
+  }
+
+.who-card p {
+    font-size: 16px; /* === AJUSTE : taille texte carte === */
+    color: var(--color-heading);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Responsive tablette */
+  @media (max-width: 1024px) {
+    .mission-section {
+      padding: 50px 0; /* === AJUSTE TABLETTE : espacement section === */
+    }
+
+    .mission-container {
+      grid-template-columns: 1fr;
+      padding: 0 40px; /* === AJUSTE TABLETTE : marge gauche/droite === */
+    }
+
+    .mission-image {
+      order: -1; /* photo au-dessus de la carte */
+      justify-content: center;
+      margin-top: 0px; /* === AJUSTE TABLETTE : marge haut photo === */
+      margin-right: 0px; /* === AJUSTE TABLETTE : marge droite photo === */
+      margin-bottom: -40px; /* === AJUSTE TABLETTE : marge bas photo (négatif = chevauchement carte) === */
+      margin-left: 0px; /* === AJUSTE TABLETTE : marge gauche photo === */
+    }
+
+    .about-portrait {
+      max-width: 300px; /* === AJUSTE TABLETTE : largeur max photo === */
+    }
+
+    .mission-card {
+      text-align: center;
+      top: 0px; /* pas de décalage vertical en tablette */
+      height: auto;
+      margin-left: 20px; /* === AJUSTE TABLETTE : marge gauche carte === */
+    }
+
+    .mission-statement::before {
+      left: 50%;
+      transform: translateX(-50%); /* centre le guillemet */
+    }
+
+    /* Think tablette */
+    .think-section {
+      padding: 50px 0; /* === AJUSTE TABLETTE : espacement section think === */
+    }
+
+    .think-container {
+      grid-template-columns: 1fr;
+      padding: 0 40px; /* === AJUSTE TABLETTE : marge gauche/droite think === */
+    }
+
+    .think-image {
+      order: -1;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .think-portrait {
+      max-width: 300px; /* === AJUSTE TABLETTE : largeur max photo think === */
+    }
+
+    .think-card {
+      text-align: center;
+      top: 0px;
+      height: auto;
+      margin-left: 20px; /* === AJUSTE TABLETTE : marge gauche carte think === */
+      margin-right: 20px; /* === AJUSTE TABLETTE : marge droite carte think === */
+      margin-top: -30px; /* === AJUSTE TABLETTE : chevauchement carte think === */
+    }
+
+    .think-text::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Responsive mobile */
+  @media (max-width: 768px) {
+    .two-col {
+      grid-template-columns: 1fr;
+    }
+
+    .two-col.reverse .col-timeline {
+      order: 0;
+    }
+
+    .col-text {
+      padding: 1.5rem;
+    }
+
+    .parcours-section .container {
+      padding: 0 10px; /* === AJUSTE MOBILE : padding réduit pour la timeline === */
+    }
+
+    .parcours-section .col-timeline {
+      margin: 0;
+      padding: 0 10px; /* === AJUSTE MOBILE : padding timeline === */
+    }
+
+    .mission-container {
+      padding: 0 20px; /* === AJUSTE MOBILE : marge gauche/droite === */
+    }
+
+    .about-portrait {
+      max-width: 250px; /* === AJUSTE MOBILE : largeur max photo === */
+    }
+
+    .mission-card {
+      margin-top: 10px; /* === AJUSTE MOBILE : marge haut carte (négatif = chevauchement image) === */
+      margin-right: 20px; /* === AJUSTE MOBILE : marge droite carte === */
+      margin-bottom: 20px; /* === AJUSTE MOBILE : marge bas carte === */
+      margin-left: 20px; /* === AJUSTE MOBILE : marge gauche carte === */
+      padding: 30px; /* === AJUSTE MOBILE : espacement intérieur carte === */
+      top: 0px;
+      height: auto;
+    }
+
+    .mission-statement {
+      padding-left: 0px; /* pas d'alinéa en mobile */
+    }
+
+    .mission-statement::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Think mobile */
+    .think-container {
+      padding: 0 20px; /* === AJUSTE MOBILE : marge gauche/droite think === */
+    }
+
+    .think-portrait {
+      max-width: 250px; /* === AJUSTE MOBILE : largeur max photo think === */
+    }
+
+    .think-card {
+      margin-top: -25px; /* === AJUSTE MOBILE : chevauchement carte think === */
+      margin-right: 20px; /* === AJUSTE MOBILE : marge droite carte think === */
+      margin-bottom: 20px; /* === AJUSTE MOBILE : marge bas carte think === */
+      margin-left: 20px; /* === AJUSTE MOBILE : marge gauche carte think === */
+      padding: 30px; /* === AJUSTE MOBILE : espacement intérieur carte think === */
+      top: 0px;
+      height: auto;
+    }
+
+    .think-text {
+      padding-left: 0px;
+    }
+
+    .think-text::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Factors mobile : 1 colonne */
+    .factors-wrapper {
+      grid-template-columns: 1fr; /* === AJUSTE MOBILE : 1 colonne === */
+      gap: 10px; /* === AJUSTE MOBILE : espace entre items et citation === */
+    }
+
+    .factors-list {
+      align-items: center; /* === AJUSTE MOBILE : centrer les items === */
+    }
+
+    .factors-text {
+      border-left: none; /* === MOBILE : pas de bordure gauche === */
+      border-top: 3px solid var(--color-gold); /* === AJUSTE MOBILE : bordure haut carte facteurs === */
+      border-radius: 8px 8px 8px 8px; /* === AJUSTE MOBILE : coins arrondis carte facteurs === */
+      text-align: center; /* === AJUSTE MOBILE : centrage texte facteurs === */
+    }
+
+    .factors-chevron {
+      transform: rotate(90deg); /* === chevron pointe vers le bas en mobile === */
+      font-size: 60px; /* === AJUSTE MOBILE : taille chevron === */
+    }
+
+    .who-grid {
+      grid-template-columns: 1fr; /* === AJUSTE MOBILE : 1 colonne === */
+    }
+  }
+
+  .faq-cta-text {
+    text-align: center;
+    font-size: 18px;                                   /* === AJUSTE : taille texte liaison CTA === */
+    font-style: italic;
+    color: #2a2a2a;
+    margin-top: 40px;                                  /* === AJUSTE : espace au-dessus du texte === */
+    margin-bottom: 20px;                               /* === AJUSTE : espace entre texte et bouton === */
+  }
+</style>
